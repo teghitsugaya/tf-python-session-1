@@ -24,6 +24,6 @@ jobs:
             -t teghitsugaya/tf-python:latest \
             -t teghitsugaya/f-python:${GITHUB_SHA::7}-${GITHUB_RUN_ID::5} \
             .
-       - name: Push container
-         run: |
-           docker push teghitsugaya/tf-python --all-tags
+      - name: Push container
+        run: |
+          docker push teghitsugaya/tf-python --all-tags
