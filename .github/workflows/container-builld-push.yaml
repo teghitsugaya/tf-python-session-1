@@ -23,7 +23,10 @@ jobs:
           docker build -f Dockerfile \
             -t teghitsugaya/tf-python:latest \
             -t teghitsugaya/f-python:${GITHUB_SHA::7}-${GITHUB_RUN_ID::5} \
+            -t teghitsugaya/tf-python:${GITHUB_SHA::7}-${GITHUB_RUN_ID::5} \
+            -t teghitsugaya/f-python:fixed \
             .
       - name: Push container
         run: |
           docker push teghitsugaya/tf-python --all-tags
+          docker push teghitsugaya/f-python --all-tags
